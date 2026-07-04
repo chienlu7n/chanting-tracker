@@ -1,3 +1,10 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "🌸皮克敏の唱題日記🌿",
+  description: "記錄每天的唱題進度，與皮克敏一起精進修行",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-TW">
