@@ -49,7 +49,7 @@ export default function ChantingTracker() {
   return (
     <div style={{ fontFamily: '"rounded-mplus-1c", sans-serif', backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("/背景.png")', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', padding: '40px 20px', color: '#4a4a4a' }}>
       <div style={{ maxWidth: '500px', margin: '0 auto', backgroundColor: 'rgba(253, 251, 247, 0.9)', borderRadius: '30px', padding: '40px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', border: '6px solid #a3d977' }}>
-        <h1 style={{ textAlign: 'center', color: '#5e9438', fontSize: '32px', fontWeight: 'bold', marginBottom: '25px' }}>皮克敏的唱題日記</h1>
+        <h1 style={{ textAlign: 'center', color: '#5e9438', fontSize: '32px', fontWeight: 'bold', marginBottom: '25px' }}>🌸皮克敏の唱題日記🌿</h1>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '15px' }}><label style={{ fontWeight: 'bold' }}>日期:</label><input type="date" value={date} onChange={(e) => setDate(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5' }} /></div>
           <div style={{ marginBottom: '15px' }}>
