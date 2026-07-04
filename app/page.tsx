@@ -44,17 +44,23 @@ export default function ChantingTracker() {
         <h1 style={{ textAlign: 'center', color: '#5e9438', fontSize: '32px', fontWeight: 'bold', marginBottom: '25px' }}>🌸皮克敏の唱題日記🌿</h1>
         
         <form onSubmit={handleSubmit}>
-          <div style={{ marginBottom: '15px' }}><label style={{ fontWeight: 'bold' }}>日期:</label><input type="date" value={date} onChange={(e) => setDate(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5' }} /></div>
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ fontWeight: 'bold' }}>選擇探險隊員:</label>
-            <select value={name} onChange={(e) => setName(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5' }}>
+          <div style={{ marginBottom: '20px', width: '100%' }}>
+            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '8px' }}>日期:</label>
+            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5', boxSizing: 'border-box' }} />
+          </div>
+          <div style={{ marginBottom: '20px', width: '100%' }}>
+            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '8px' }}>選擇探險隊員:</label>
+            <select value={name} onChange={(e) => setName(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5', boxSizing: 'border-box' }}>
               <option value="">-- 請選擇名字 --</option>
               {TEAM_MEMBERS.map(m => <option key={m} value={m}>{m}</option>)}
             </select>
           </div>
-          <div style={{ marginBottom: '30px' }}><label style={{ fontWeight: 'bold' }}>時間 (分鐘):</label><input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5' }} /></div>
+          <div style={{ marginBottom: '25px', width: '100%' }}>
+            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '8px' }}>時間 (分鐘):</label>
+            <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required style={{ width: '100%', padding: '15px', borderRadius: '15px', border: '3px solid #a3d977', backgroundColor: '#f9fff5', boxSizing: 'border-box' }} />
+          </div>
           
-          <button type="submit" disabled={status === 'working'} style={{ width: '100%', padding: '18px', backgroundColor: '#669933', color: '#fff', border: 'none', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', transition: 'transform 0.2s', transform: status === 'working' ? 'scale(1)' : 'scale(1.03)' }}>
+          <button type="submit" disabled={status === 'working'} style={{ width: '100%', padding: '18px', backgroundColor: '#669933', color: '#fff', border: 'none', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', transition: 'transform 0.2s', transform: status === 'working' ? 'scale(1)' : 'scale(1.03)', boxSizing: 'border-box' }}>
             {status === 'working' ? '🍃 搬運中...' : '📣 紀錄日記！'}
           </button>
         </form>
