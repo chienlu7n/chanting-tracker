@@ -29,25 +29,17 @@ export default function ChantingTracker() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name) { setMessage("請選擇姓名！"); setStatus('error'); return; }
-    
     setStatus('working');
     const { error } = await supabase.from('records').insert([{ 
       user_name: name, duration: parseInt(duration), chanting_date: date 
     }]);
-
-    if (error) {
-      setStatus('error');
-      setMessage(`故障: ${error.message}`);
-    } else {
-      setStatus('success');
-      setMessage(`🎉 ${name} 剛剛唱題 ${duration} 分鐘！`);
-      setName(''); setDuration(''); fetchRecent();
-    }
+    if (error) { setStatus('error'); setMessage(`故障: ${error.message}`); }
+    else { setStatus('success'); setMessage(`🎉 ${name} 剛剛唱題 ${duration} 分鐘！`); setName(''); setDuration(''); fetchRecent(); }
     setTimeout(() => setStatus('idle'), 5000);
   };
 
   return (
-    <div style={{ fontFamily: '"rounded-mplus-1c", sans-serif', backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("/背景.png")', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', padding: '40px 20px', color: '#4a4a4a' }}>
+    <div style={{ fontFamily: "'Huninn', sans-serif", backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("/背景.png")', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', padding: '40px 20px', color: '#4a4a4a' }}>
       <div style={{ maxWidth: '500px', margin: '0 auto', backgroundColor: 'rgba(253, 251, 247, 0.9)', borderRadius: '30px', padding: '40px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', border: '6px solid #a3d977' }}>
         <h1 style={{ textAlign: 'center', color: '#5e9438', fontSize: '32px', fontWeight: 'bold', marginBottom: '25px' }}>🌸皮克敏の唱題日記🌿</h1>
         
