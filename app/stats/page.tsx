@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase'; // 修正後的引用
+import { supabase } from '@/lib/supabase';
 
 export default function StatsPage() {
   const [records, setRecords] = useState<any[]>([]);
@@ -35,7 +35,8 @@ export default function StatsPage() {
   };
 
   return (
-    <div style={{ padding: '40px', textAlign: 'center', fontFamily: '"rounded-mplus-1c", sans-serif', backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("/背景.png")', backgroundSize: 'cover', minHeight: '100vh' }}>
+    // 這裡將 fontFamily 改為 'Huninn'，確保與全域一致
+    <div style={{ padding: '40px', textAlign: 'center', fontFamily: "'Huninn', sans-serif", backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("/背景.png")', backgroundSize: 'cover', minHeight: '100vh' }}>
       <div style={{ maxWidth: '600px', margin: '0 auto', backgroundColor: 'rgba(253, 251, 247, 0.9)', padding: '40px', borderRadius: '40px', border: '5px solid #a3d977' }}>
         <h1 style={{ color: '#5e9438' }}>🏆 團隊總目標 (70小時)</h1>
         <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#5e9438' }}>{totalHours.toFixed(1)} / 70 小時</div>
@@ -68,7 +69,7 @@ export default function StatsPage() {
         </div>
         
         <button onClick={downloadCSV} style={{ marginTop: '20px', padding: '10px 20px', borderRadius: '50px', border: '2px solid #5e9438', backgroundColor: 'transparent', color: '#5e9438', cursor: 'pointer', fontWeight: 'bold' }}>📥 下載統計報表</button>
-        <button onClick={() => router.push('/')} style={{ display: 'block', width: '100%', marginTop: '20px', padding: '15px', borderRadius: '50px', backgroundColor: '#5e9438', color: '#fff', cursor: 'pointer' }}>回到日記本</button>
+        <button onClick={() => router.push('/')} style={{ display: 'block', width: '100%', marginTop: '20px', padding: '15px', borderRadius: '50px', backgroundColor: '#5e9438', color: '#fff', cursor: 'pointer', fontWeight: 'bold' }}>回到日記本</button>
       </div>
     </div>
   );
